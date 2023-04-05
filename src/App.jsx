@@ -1,22 +1,35 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { AccumulativeShadows, SpotLight } from "@react-three/drei";
+import { OrbitControls, Center, Environment } from "@react-three/drei";
+import { Moto } from "./Components/Moto";
+import { AmbientLight } from "three";
+import Backdrop from "./Components/Backdrop";
 
-const App = () => {
+const App = ({ position = [-1, 0, 2.5], fov = 25 }) => {
   return (
-    <Canvas>
+    <Canvas
+      eventSource={document.getElementById("root")}
+      eventPrefix="client"
+      camera={{ position, fov }}
+    >
       <OrbitControls />
-      <Moto />
+      <ambientLight intensity={0.5} />
+      <Environment preset="city" />
+      <Center>
+        <Moto />
+        <AccumulativeShadows />
+      </Center>
     </Canvas>
   );
 };
 
 export default App;
 
-function Moto() {
-  return (
-    <mesh>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshNormalMaterial />
-    </mesh>
-  );
-}
+// function Moto() {
+//   return (
+//     <mesh>
+//       <boxGeometry args={[1, 1, 1]} />
+//       <meshNormalMaterial />
+//     </mesh>
+//   );
+// }
