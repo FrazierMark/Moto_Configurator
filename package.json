@@ -1,0 +1,23 @@
+{
+  "name": "motorcycle-configurator",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "3.1",
+    "vite": "^4.2.1"
+  },
+  "dependencies": {
+    "react": "18.2",
+    "react-dom": "18.2",
+    "@react-three/drei": "^9.62.4",
+    "@react-three/fiber": "^8.12.0",
+    "r3f-perf": "^7.1.2",
+    "three": "^0.151.3",
+    "zustand": "4.3"
+  }
+}
