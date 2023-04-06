@@ -54,7 +54,18 @@ function Customizer() {
     "Purple",
   ];
 
-  const decals = ["react", "three2", "pmndrs"];
+  const decals = [
+    "decals/003",
+    "decals/004",
+    "decals/011",
+    "decals/021",
+    "decals/030",
+    "decals/031",
+    "decals/033",
+    "decals/036",
+    "decals/044",
+    "decals/052",
+  ];
 
   return (
     <section key="custom">
@@ -72,7 +83,7 @@ function Customizer() {
           <div className="decals--container">
             {decals.map((decal) => (
               <div key={decal} className="decal">
-                <img src={decal + "_thumb.png"} alt="brand" />
+                <img src={decal + ".png"} alt="brand" />
               </div>
             ))}
           </div>
