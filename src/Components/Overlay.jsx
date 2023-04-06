@@ -15,7 +15,7 @@ export default function Overlay() {
     <div className="container">
       <header>
         {/* <Logo width="40" height="40" /> */}
-        <img src={"decals/044.png"} width="80" height="80" alt="brand" />
+        <img src={"decals/044.png"} width="60" height="60" alt="brand" />
         <div>
           <AiOutlineShopping size="3em" />
         </div>
@@ -56,6 +56,8 @@ function Intro() {
 }
 
 function Customizer() {
+  const snap = useSnapshot(state);
+
   const colors = [
     "#ccc",
     "#EFBD4E",
@@ -85,6 +87,7 @@ function Customizer() {
               key={color}
               className="circle"
               style={{ background: color }}
+              onClick={() => (state.selectedColor = color)}
             ></div>
           ))}
         </div>
@@ -98,13 +101,13 @@ function Customizer() {
           </div>
         </div>
 
-        <button className="share" style={{ background: "black" }}>
+        <button className="share" style={{ background: snap.selectedColor }}>
           DOWNLOAD
           <AiFillCamera size="1.3em" />
         </button>
         <button
           className="exit"
-          style={{ background: "black" }}
+          style={{ background: snap.selectedColor }}
           onClick={() => {
             state.intro = true;
           }}

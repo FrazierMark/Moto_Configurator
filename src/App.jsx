@@ -6,6 +6,7 @@ import { AmbientLight } from "three";
 import Backdrop from "./Components/Backdrop";
 import CameraRig from "./Components/CameraRig";
 
+
 const App = ({ position = [0.5, 0.2, 1.5], fov = 25 }) => {
   return (
     <Canvas

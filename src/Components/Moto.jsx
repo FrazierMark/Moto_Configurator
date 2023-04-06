@@ -1,11 +1,29 @@
 
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
-
+import { useSnapshot } from "valtio";
+import { state } from "../Store";
+import * as THREE from "three";
+import { useFrame } from "@react-three/fiber";
+import { easing } from "maath";
 
 export function Moto(props) {
-    
+  const snap = useSnapshot(state);
+
   const { nodes, materials } = useGLTF("/CafeRacer.glb");
+
+  useFrame((state, delta) => {
+    // smooth transition between different colors
+    easing.dampC(
+      materials["Purple Glossy"].color,
+      snap.selectedColor,
+      0.25,
+      delta
+    );
+  });
+
+  //materials["Purple Glossy"].color = new THREE.Color(snap.selectedColor);
+
   return (
     <group
       {...props}
