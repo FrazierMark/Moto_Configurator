@@ -19,7 +19,7 @@ const App = ({ position = [0.5, 0.2, 1.5], fov = 25 }) => {
 
       <CameraRig>
         <Center>
-          <Moto position={[0, -0.18, 0]} />
+          <Moto position={[0, -0.06, 0]} />
           <Backdrop />
         </Center>
       </CameraRig>
