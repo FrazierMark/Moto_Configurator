@@ -8,6 +8,7 @@ import Backdrop from "./Components/Backdrop";
 const App = ({ position = [-1, 0, 2.5], fov = 25 }) => {
   return (
     <Canvas
+      shadows
       eventSource={document.getElementById("root")}
       eventPrefix="client"
       camera={{ position, fov }}
@@ -17,7 +18,7 @@ const App = ({ position = [-1, 0, 2.5], fov = 25 }) => {
       <Environment preset="city" />
       <Center>
         <Moto />
-        <AccumulativeShadows />
+        <Backdrop />
       </Center>
     </Canvas>
   );
@@ -25,11 +26,4 @@ const App = ({ position = [-1, 0, 2.5], fov = 25 }) => {
 
 export default App;
 
-// function Moto() {
-//   return (
-//     <mesh>
-//       <boxGeometry args={[1, 1, 1]} />
-//       <meshNormalMaterial />
-//     </mesh>
-//   );
-// }
+

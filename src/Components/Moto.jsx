@@ -7,7 +7,12 @@ export function Moto(props) {
     
   const { nodes, materials } = useGLTF("/CafeRacer.glb");
   return (
-    <group {...props} dispose={null}>
+    <group
+      {...props}
+      dispose={null}
+      rotation={[0, Math.PI * -0.5, 0]}
+      scale={5}
+    >
       <group position={[0, 0, 0]}>
         <mesh
           castShadow
