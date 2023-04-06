@@ -5,12 +5,12 @@ import {
   AiFillCamera,
   AiOutlineArrowLeft,
 } from "react-icons/ai";
+import { useSnapshot } from "valtio";
+import { state } from "../Store";
 
 export default function Overlay() {
-  return <Customizer />;
-}
+  const snap = useSnapshot(state);
 
-function Intro() {
   return (
     <div className="container">
       <header>
@@ -20,26 +20,37 @@ function Intro() {
         </div>
       </header>
 
-      <section key="main">
-        <div className="section--container">
+      {snap.intro ? <Intro /> : <Customizer />}
+    </div>
+  );
+}
+
+function Intro() {
+  return (
+    <section key="main">
+      <div className="section--container">
+        <div>
+          <h1>LET'S RIDE.</h1>
+        </div>
+        <div className="support--content">
           <div>
-            <h1>LET'S RIDE.</h1>
-          </div>
-          <div className="support--content">
-            <div>
-              <p>
-                Create your unique and exclusive cafe racer with our brand-new
-                3D customization tool. <strong>Unleash your imagination</strong>{" "}
-                and define your own ride.
-              </p>
-              <button style={{ background: "black" }}>
-                CUSTOMIZE IT <AiOutlineHighlight size="1.3em" />
-              </button>
-            </div>
+            <p>
+              Create your unique and exclusive cafe racer with our brand-new 3D
+              customization tool. <strong>Unleash your imagination</strong> and
+              define your own ride.
+            </p>
+            <button
+              style={{ background: "black" }}
+              onClick={() => {
+                state.intro = false;
+              }}
+            >
+              CUSTOMIZE IT <AiOutlineHighlight size="1.3em" />
+            </button>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
 
@@ -55,7 +66,6 @@ function Customizer() {
   ];
 
   const decals = [
-    "decals/003",
     "decals/004",
     "decals/011",
     "decals/021",
@@ -64,7 +74,6 @@ function Customizer() {
     "decals/033",
     "decals/036",
     "decals/044",
-    "decals/052",
   ];
 
   return (
@@ -88,11 +97,18 @@ function Customizer() {
             ))}
           </div>
         </div>
+
         <button className="share" style={{ background: "black" }}>
           DOWNLOAD
           <AiFillCamera size="1.3em" />
         </button>
-        <button className="exit" style={{ background: "black" }}>
+        <button
+          className="exit"
+          style={{ background: "black" }}
+          onClick={() => {
+            state.intro = true;
+          }}
+        >
           GO BACK
           <AiOutlineArrowLeft size="1.3em" />
         </button>

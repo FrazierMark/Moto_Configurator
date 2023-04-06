@@ -194,14 +194,14 @@ button:hover {
   }
   
   .decals img {
-    width: 24px;
+    width: 35px;
     filter: saturate(0) invert(1) brightness(5.5);
     transition: all 0.2s ease-in-out;
   }
   
   .decals img:hover {
     filter: none;
-    transform: scale(1.2);
+    transform: scale(1.5);
     cursor: pointer;
   }
   
