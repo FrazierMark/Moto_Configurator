@@ -14,7 +14,8 @@ export default function Overlay() {
   return (
     <div className="container">
       <header>
-        <Logo width="40" height="40" />
+        {/* <Logo width="40" height="40" /> */}
+        <img src={"decals/044.png"} width="80" height="80" alt="brand" />
         <div>
           <AiOutlineShopping size="3em" />
         </div>
@@ -73,7 +74,6 @@ function Customizer() {
     "decals/031",
     "decals/033",
     "decals/036",
-    "decals/044",
   ];
 
   return (
