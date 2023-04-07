@@ -7,6 +7,7 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 import { easing } from "maath";
 import { useControls } from "leva";
+import { Leva } from "leva";
 
 export function Moto(props) {
   const snap = useSnapshot(state);
@@ -60,8 +61,10 @@ export function Moto(props) {
       {...props}
       dispose={null}
       rotation={[0, Math.PI * -0.5, 0]}
+      // position={[2, 1, 0]}
       scale={5}
     >
+      <Leva hidden />
       <group position={[0, 0, 0]}>
         <mesh
           castShadow

@@ -9,13 +9,14 @@ import { Moto } from "./Components/Moto";
 import { AmbientLight } from "three";
 import Backdrop from "./Components/Backdrop";
 import CameraRig from "./Components/CameraRig";
+import { Suspense } from "react";
+import Loader from "./Components/Loader";
 
-
-const App = ({ position = [0.5, 0.2, 1.5], fov = 25 }) => {
+const App = ({ position = [0.0, 0.0, 2], fov = 25 }) => {
   return (
     <Canvas
       shadows
-      gl={{preserveDrawingBuffer: true}}
+      gl={{ preserveDrawingBuffer: true }}
       eventSource={document.getElementById("root")}
       eventPrefix="client"
       camera={{ position, fov }}
@@ -26,9 +27,9 @@ const App = ({ position = [0.5, 0.2, 1.5], fov = 25 }) => {
 
       <CameraRig>
         <Backdrop />
-        <Center>
-          <Moto position={[0, -0.06, 0]} />
-        </Center>
+          <Center>
+            <Moto />
+          </Center>
       </CameraRig>
     </Canvas>
   );

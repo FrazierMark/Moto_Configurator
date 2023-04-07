@@ -35,15 +35,19 @@ export default function Overlay() {
       </motion.header>
 
       <AnimatePresence>
-        {snap.intro ? <Intro /> : <Customizer />}
+        {snap.intro ? (
+          <Intro key="main" config={config} />
+        ) : (
+          <Customizer key="custom" config={config} />
+        )}
       </AnimatePresence>
     </div>
   );
 }
 
-function Intro() {
+function Intro({ config }) {
   return (
-    <section key="main">
+    <motion.section {...config} key="main">
       <div className="section--container">
         <div>
           <h1>LET'S RIDE.</h1>
@@ -66,38 +70,20 @@ function Intro() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
-function Customizer() {
+function Customizer({ config }) {
   const snap = useSnapshot(state);
 
-  const colors = [
-    "#ccc",
-    "#EFBD4E",
-    "#80C670",
-    "#726DE8",
-    "#EF674E",
-    "#353934",
-    "Purple",
-  ];
 
-  const decals = [
-    "decals/004",
-    "decals/011",
-    "decals/021",
-    "decals/030",
-    "decals/031",
-    "decals/033",
-    "decals/036",
-  ];
 
   return (
-    <section key="custom">
+    <motion.section {...config} key="custom">
       <div className="customizer">
         <div className="color-options">
-          {colors.map((color) => (
+          {snap.colors.map((color) => (
             <div
               key={color}
               className="circle"
@@ -108,7 +94,7 @@ function Customizer() {
         </div>
         <div className="decals">
           <div className="decals--container">
-            {decals.map((decal) => (
+            {snap.decals.map((decal) => (
               <div
                 key={decal}
                 className="decal"
@@ -150,6 +136,6 @@ function Customizer() {
           <AiOutlineArrowLeft size="1.3em" />
         </button>
       </div>
-    </section>
+    </motion.section>
   );
 }
