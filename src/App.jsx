@@ -1,5 +1,9 @@
 import { Canvas } from "@react-three/fiber";
-import { AccumulativeShadows, SpotLight } from "@react-three/drei";
+import {
+  AccumulativeShadows,
+  OrbitControls,
+  SpotLight,
+} from "@react-three/drei";
 import { Center, Environment } from "@react-three/drei";
 import { Moto } from "./Components/Moto";
 import { AmbientLight } from "three";
@@ -17,13 +21,14 @@ const App = ({ position = [0.5, 0.2, 1.5], fov = 25 }) => {
     >
       <ambientLight intensity={0.9} />
       <Environment preset="sunset" />
+      <OrbitControls />
 
-      <CameraRig>
-        <Center>
-          <Moto position={[0, -0.06, 0]} />
-          <Backdrop />
-        </Center>
-      </CameraRig>
+      {/* <CameraRig> */}
+      <Center>
+        <Moto position={[0, -0.06, 0]} />
+        <Backdrop />
+      </Center>
+      {/* </CameraRig> */}
     </Canvas>
   );
 };

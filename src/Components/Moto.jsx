@@ -1,14 +1,16 @@
 
 import React, { useRef } from "react";
-import { useGLTF } from "@react-three/drei";
+import { useGLTF, Decal, useTexture } from "@react-three/drei";
 import { useSnapshot } from "valtio";
 import { state } from "../Store";
 import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 import { easing } from "maath";
+import { useControls } from "leva";
 
 export function Moto(props) {
   const snap = useSnapshot(state);
+  const texture = useTexture(`/${snap.selectedDecal}.png`);
 
   const { nodes, materials } = useGLTF("/CafeRacer.glb");
 
@@ -20,6 +22,35 @@ export function Moto(props) {
       0.25,
       delta
     );
+  });
+
+  const {
+    decalPositionX,
+    decalPositionY,
+    decalPositionZ,
+    decalRotationX,
+    decalRotationY,
+    decalRotationZ,
+    decalScale,
+  } = useControls({
+    decalPositionX: { value: 0.0054, min: -4, max: 4, step: 0.0001 },
+    decalPositionY: { value: 0.057, min: -4, max: 4, step: 0.0001 },
+    decalPositionZ: { value: -0.016, min: -4, max: 4, step: 0.0001 },
+
+    decalRotationX: { value: -2.871, min: -4, max: 4, step: 0.001 },
+    decalRotationY: {
+      value: -1.6839000000000002,
+      min: -4,
+      max: 4,
+      step: 0.0001,
+    },
+    decalRotationZ: {
+      value: 0.28500000000000003,
+      min: -4,
+      max: 4,
+      step: 0.0001,
+    },
+    decalScale: { value: -0.0142, min: -4, max: 4, step: 0.0001 },
   });
 
   //materials["Purple Glossy"].color = new THREE.Color(snap.selectedColor);
@@ -37,13 +68,32 @@ export function Moto(props) {
           receiveShadow
           geometry={nodes["tanksCombined-Purple_Glossy"].geometry}
           material={materials["Purple Glossy"]}
-        />
+        >
+          <Decal
+            position={[0, 0.0, 0.35]}
+            rotation={[0, 0, 0]}
+            scale={decalScale}
+            opacity={1.7}
+            map={texture}
+            map-anisotropy={16}
+          />
+        </mesh>
+
         <mesh
           castShadow
           receiveShadow
           geometry={nodes["tanksCombined-Purple_Glossy_1"].geometry}
           material={materials["Purple Glossy"]}
-        />
+        >
+          <Decal
+            position={[decalPositionX, decalPositionY, decalPositionZ]}
+            rotation={[decalRotationX, decalRotationY, decalRotationZ]}
+            scale={decalScale}
+            opacity={1.7}
+            map={texture}
+            map-anisotropy={16}
+          />
+        </mesh>
       </group>
       <mesh
         castShadow
@@ -534,7 +584,17 @@ export function Moto(props) {
         geometry={nodes.Cube023_Cube004_remesh.geometry}
         material={materials["Purple Glossy"]}
         position={[0, 0, 0]}
-      />
+      >
+        <Decal
+          position={[0, 0, 0]}
+          rotation={[0, 0, 0]}
+          scale={0.05}
+          opacity={0.9}
+          map={texture}
+          map-anisotropy={16}
+        />
+      </mesh>
+
       <mesh
         castShadow
         receiveShadow

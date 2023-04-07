@@ -11,8 +11,10 @@ const state = proxy({
     "decals/031",
     "decals/033",
     "decals/036",
+    "decals/044",
   ],
   selectedColor: "#EFBD4E",
+  selectedDecal: "decals/044",
 });
 
 export { state };

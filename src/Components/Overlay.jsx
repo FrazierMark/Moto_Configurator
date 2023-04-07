@@ -94,7 +94,11 @@ function Customizer() {
         <div className="decals">
           <div className="decals--container">
             {decals.map((decal) => (
-              <div key={decal} className="decal">
+              <div
+                key={decal}
+                className="decal"
+                onClick={() => (state.selectedDecal = decal)}
+              >
                 <img src={decal + ".png"} alt="brand" />
               </div>
             ))}
