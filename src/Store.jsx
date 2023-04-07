@@ -13,6 +13,9 @@ const state = proxy({
     "decals/036",
     "decals/044",
   ],
+  parts: ["tank", "tail", "sidePanel"],
+
+  selectedPart: ["tank"],
   selectedColor: "#BAA0BC",
   selectedDecal: "decals/044",
 });

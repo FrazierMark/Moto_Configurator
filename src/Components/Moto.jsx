@@ -66,7 +66,6 @@ export function Moto(props) {
     ),
   });
 
-  //materials["Purple Glossy"].color = new THREE.Color(snap.selectedColor);
 
   return (
     <group
@@ -76,7 +75,7 @@ export function Moto(props) {
       // position={[2, 1, 0]}
       scale={5}
     >
-      {/* <Leva hidden /> */}
+      <Leva hidden />
       <group>
         <Select name="tail" enabled={config.tail}>
           <mesh
