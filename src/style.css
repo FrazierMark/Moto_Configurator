@@ -3,6 +3,21 @@
 html {
   font-family: 'Inter', sans-serif;
 }
+@font-face {
+  font-family: "PalmCanyonDrive";
+  src: url("PalmCanyonDrive.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PoiretOne";
+  src: url("PoiretOne.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "bebas-neue";
+  src: url("bebas-neue-v9-latin-regular.woff") format("woff");
+}
+
 @supports (font-variation-settings: normal) {
   html {
     font-family: 'Inter var', sans-serif;
@@ -92,7 +107,7 @@ section {
   font-style: italic;
   width: 30%;
   line-height: 19vh;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'bebas-neue', sans-serif;
 }
 
 .support--content {

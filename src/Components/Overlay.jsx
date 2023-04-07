@@ -50,7 +50,7 @@ function Intro({ config }) {
     <motion.section {...config} key="main">
       <div className="section--container">
         <div>
-          <h1>LET'S RIDE.</h1>
+          <h1>Let's Ride.</h1>
         </div>
         <div className="support--content">
           <div>
