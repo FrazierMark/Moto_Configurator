@@ -90,7 +90,7 @@ section {
 }
 
 .section--container {
-  margin-top: -15vh;
+  margin-top: -12vh;
   margin-left: -10vw;
 }
 
@@ -111,13 +111,13 @@ section {
 
 .support--content {
   position: relative;
-  top: -45%;
-  left: 35rem;
+  top: -42%;
+  left: 75%;
 }
 
 .support--content p {
-  width: 350px;
-  margin-bottom: 28px;
+  width: 330px;
+  margin-bottom: 22px;
   line-height: 1.5rem;
 }
 
@@ -209,12 +209,10 @@ button:hover {
   
   .decals img {
     width: 35px;
-    filter: saturate(0) invert(1) brightness(5.5);
     transition: all 0.2s ease-in-out;
   }
   
   .decals img:hover {
-    filter: none;
     transform: scale(1.5);
     cursor: pointer;
   }

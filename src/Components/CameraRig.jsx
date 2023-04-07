@@ -21,7 +21,7 @@ function CameraRig({ children }) {
     // Mouse/camera movement
     easing.dampE(
       group.current.rotation,
-      [state.pointer.y / 4, -state.pointer.x / 5, 0],
+      [-state.pointer.y / 4, state.pointer.x / 5, 0],
       0.25,
       delta
     );
