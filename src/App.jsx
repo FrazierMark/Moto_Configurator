@@ -15,20 +15,21 @@ const App = ({ position = [0.5, 0.2, 1.5], fov = 25 }) => {
   return (
     <Canvas
       shadows
+      gl={{preserveDrawingBuffer: true}}
       eventSource={document.getElementById("root")}
       eventPrefix="client"
       camera={{ position, fov }}
     >
       <ambientLight intensity={0.9} />
       <Environment preset="sunset" />
-      <OrbitControls />
+      {/* <OrbitControls /> */}
 
-      {/* <CameraRig> */}
-      <Center>
-        <Moto position={[0, -0.06, 0]} />
+      <CameraRig>
         <Backdrop />
-      </Center>
-      {/* </CameraRig> */}
+        <Center>
+          <Moto position={[0, -0.06, 0]} />
+        </Center>
+      </CameraRig>
     </Canvas>
   );
 };

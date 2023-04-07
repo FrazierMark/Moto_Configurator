@@ -7,21 +7,36 @@ import {
 } from "react-icons/ai";
 import { useSnapshot } from "valtio";
 import { state } from "../Store";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Overlay() {
   const snap = useSnapshot(state);
 
+  const transition = { type: "spring", duration: 0.8 };
+
+  const config = {
+    initial: { x: -100, opacity: 0, transition: { ...transition, delay: 0.5 } },
+    animate: { x: 0, opacity: 1, transition: { ...transition, delay: 0 } },
+    exit: { x: -100, opacity: 0, transition: { ...transition, delay: 0 } },
+  };
+
   return (
     <div className="container">
-      <header>
+      <motion.header
+        initial={{ opacity: 0, y: -120 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "spring", duration: 1.8, delay: 1 }}
+      >
         {/* <Logo width="40" height="40" /> */}
         <img src={"decals/044.png"} width="60" height="60" alt="brand" />
         <div>
           <AiOutlineShopping size="3em" />
         </div>
-      </header>
+      </motion.header>
 
-      {snap.intro ? <Intro /> : <Customizer />}
+      <AnimatePresence>
+        {snap.intro ? <Intro /> : <Customizer />}
+      </AnimatePresence>
     </div>
   );
 }
@@ -105,7 +120,22 @@ function Customizer() {
           </div>
         </div>
 
-        <button className="share" style={{ background: snap.selectedColor }}>
+        <button
+          className="share"
+          style={{ background: snap.selectedColor }}
+          onClick={() => {
+            const link = document.createElement("a");
+            link.setAttribute("download", "canvas.png");
+            link.setAttribute(
+              "href",
+              document
+                .querySelector("canvas")
+                .toDataURL("image/png")
+                .replace("image/png", "image/octet-stream")
+            );
+            link.click();
+          }}
+        >
           DOWNLOAD
           <AiFillCamera size="1.3em" />
         </button>

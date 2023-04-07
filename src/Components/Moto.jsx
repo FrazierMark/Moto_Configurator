@@ -39,13 +39,13 @@ export function Moto(props) {
 
     decalRotationX: { value: -2.871, min: -4, max: 4, step: 0.001 },
     decalRotationY: {
-      value: -1.6839000000000002,
+      value: 1.7929000000000002,
       min: -4,
       max: 4,
       step: 0.0001,
     },
     decalRotationZ: {
-      value: 0.28500000000000003,
+      value: -0.2721,
       min: -4,
       max: 4,
       step: 0.0001,
@@ -1216,3 +1216,13 @@ export function Moto(props) {
 }
 
 useGLTF.preload("/CafeRacer.glb");
+[
+  "decals/004.png",
+  "decals/011.png",
+  "decals/021.png",
+  "decals/030.png",
+  "decals/031.png",
+  "decals/033.png",
+  "decals/036.png",
+  "decals/044.png",
+].forEach(useTexture.preload);
