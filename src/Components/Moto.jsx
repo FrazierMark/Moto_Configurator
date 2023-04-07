@@ -58,9 +58,9 @@ export function Moto(props) {
     all: { value: false },
     parts: folder(
       {
-        tank: { value: true },
-        tail: { value: false },
-        piston1: { value: false },
+        tank: { value: false },
+        tail: { value: true },
+        sidePanel: { value: false },
       },
       { collapsed: true }
     ),
@@ -78,7 +78,7 @@ export function Moto(props) {
     >
       {/* <Leva hidden /> */}
       <group>
-        <Select name="tank" enabled={config.tank}>
+        <Select name="tail" enabled={config.tail}>
           <mesh
             castShadow
             receiveShadow
@@ -96,21 +96,23 @@ export function Moto(props) {
           </mesh>
         </Select>
 
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["tanksCombined-Purple_Glossy_1"].geometry}
-          material={materials["Purple Glossy"]}
-        >
-          <Decal
-            position={[decalPositionX, decalPositionY, decalPositionZ]}
-            rotation={[decalRotationX, decalRotationY, decalRotationZ]}
-            scale={decalScale}
-            opacity={1.7}
-            map={texture}
-            map-anisotropy={16}
-          />
-        </mesh>
+        <Select name="tank" enabled={config.tank}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes["tanksCombined-Purple_Glossy_1"].geometry}
+            material={materials["Purple Glossy"]}
+          >
+            <Decal
+              position={[decalPositionX, decalPositionY, decalPositionZ]}
+              rotation={[decalRotationX, decalRotationY, decalRotationZ]}
+              scale={decalScale}
+              opacity={1.7}
+              map={texture}
+              map-anisotropy={16}
+            />
+          </mesh>
+        </Select>
       </group>
       <mesh
         castShadow
@@ -595,22 +597,24 @@ export function Moto(props) {
         material={materials["Car Paint - Black Solid"]}
         position={[0, 0, 0]}
       />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube023_Cube004_remesh.geometry}
-        material={materials["Purple Glossy"]}
-        position={[0, 0, 0]}
-      >
-        <Decal
+      <Select name="sidePanel" enabled={config.sidePanel}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube023_Cube004_remesh.geometry}
+          material={materials["Purple Glossy"]}
           position={[0, 0, 0]}
-          rotation={[0, 0, 0]}
-          scale={0.05}
-          opacity={0.9}
-          map={texture}
-          map-anisotropy={16}
-        />
-      </mesh>
+        >
+          <Decal
+            position={[0, 0, 0]}
+            rotation={[0, 0, 0]}
+            scale={0.05}
+            opacity={0.9}
+            map={texture}
+            map-anisotropy={16}
+          />
+        </mesh>
+      </Select>
 
       <mesh
         castShadow
@@ -862,7 +866,7 @@ export function Moto(props) {
         receiveShadow
         geometry={nodes.Cylinder013_Cylinder022_remesh.geometry}
         material={materials["Rubber - Black"]}
-        position={[0, 0, 0]}
+        position={[0, -0.0004, -0.0007]}
       />
       <mesh
         castShadow
@@ -974,14 +978,14 @@ export function Moto(props) {
         receiveShadow
         geometry={nodes.Cylinder025_Cylinder006_remesh.geometry}
         material={materials["Rubber - Black"]}
-        position={[0, 0, 0]}
+        position={[0, -0.00028, -0.0001]}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Cylinder025_Cylinder006_remesh_1.geometry}
         material={materials["Rubber - Black"]}
-        position={[0, 0, -0.1]}
+        position={[0, 0.0003, -0.102]}
       />
       <mesh
         castShadow
