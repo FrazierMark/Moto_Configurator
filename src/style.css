@@ -90,8 +90,8 @@ section {
 }
 
 .section--container {
-  margin-top: 80vh;
-  margin-left: 0vw;
+  margin-top: -15vh;
+  margin-left: -10vw;
 }
 
 .section--container.hidden {
@@ -101,24 +101,23 @@ section {
 }
 
 .section--container h1 {
-  font-weight: 700;
-  font-size: 15vw;
-  letter-spacing: -6px;
-  font-style: italic;
+  font-weight: 400;
+  font-size: 25vw;
+  letter-spacing: 1px;
   width: 30%;
-  line-height: 19vh;
+  line-height: 26vh;
   font-family: 'bebas-neue', sans-serif;
 }
 
 .support--content {
   position: relative;
   top: -45%;
-  left: 900px;
+  left: 35rem;
 }
 
 .support--content p {
   width: 350px;
-  margin-bottom: 48px;
+  margin-bottom: 28px;
   line-height: 1.5rem;
 }
 

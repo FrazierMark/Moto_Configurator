@@ -19,7 +19,7 @@ import {
 } from "@react-three/postprocessing";
 import { useState } from "react";
 
-const App = ({ position = [0.0, 0.0, 2], fov = 25 }) => {
+const App = ({ position = [0.0, 0.0, 1.6], fov = 25 }) => {
   const [radius, setRadius] = useState(0);
   return (
     <Canvas
@@ -31,38 +31,38 @@ const App = ({ position = [0.0, 0.0, 2], fov = 25 }) => {
     >
       <ambientLight intensity={0.9} />
       <Environment preset="sunset" />
-      <OrbitControls />
+      {/* <OrbitControls /> */}
 
-      {/* <CameraRig> */}
-      <Backdrop />
-      <Center>
-        <Selection>
-          <EffectComposer autoClear={false}>
-            <SSAO
-              radius={radius}
-              intensity={150}
-              luminanceInfluence={0.5}
-              color="black"
-            />
-            <Outline
-              visibleEdgeColor="orange"
-              hiddenEdgeColor="orange"
-              blur
-              edgeStrength={80}
-            />
-          </EffectComposer>
-          <Bounds
-            fit
-            clip
-            margin={1.2}
-            damping={0}
-            onFit={(e) => setRadius(e.distance / 4000)}
-          >
-            <Moto />
-          </Bounds>
-        </Selection>
-      </Center>
-      {/* </CameraRig> */}
+      <CameraRig>
+        <Backdrop />
+        <Center>
+          <Selection>
+            <EffectComposer autoClear={false}>
+              <SSAO
+                radius={radius}
+                intensity={150}
+                luminanceInfluence={0.5}
+                color="black"
+              />
+              <Outline
+                visibleEdgeColor="orange"
+                hiddenEdgeColor="orange"
+                blur
+                edgeStrength={80}
+              />
+            </EffectComposer>
+            <Bounds
+              fit
+              clip
+              margin={1.2}
+              damping={0}
+              onFit={(e) => setRadius(e.distance / 4000)}
+            >
+              <Moto />
+            </Bounds>
+          </Selection>
+        </Center>
+      </CameraRig>
     </Canvas>
   );
 };
