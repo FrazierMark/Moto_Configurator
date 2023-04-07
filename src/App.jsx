@@ -4,15 +4,23 @@ import {
   OrbitControls,
   SpotLight,
 } from "@react-three/drei";
-import { Center, Environment } from "@react-three/drei";
+import { Center, Environment, Bounds } from "@react-three/drei";
 import { Moto } from "./Components/Moto";
 import { AmbientLight } from "three";
 import Backdrop from "./Components/Backdrop";
 import CameraRig from "./Components/CameraRig";
 import { Suspense } from "react";
 import Loader from "./Components/Loader";
+import {
+  EffectComposer,
+  SSAO,
+  Selection,
+  Outline,
+} from "@react-three/postprocessing";
+import { useState } from "react";
 
 const App = ({ position = [0.0, 0.0, 2], fov = 25 }) => {
+  const [radius, setRadius] = useState(0);
   return (
     <Canvas
       shadows
@@ -27,9 +35,33 @@ const App = ({ position = [0.0, 0.0, 2], fov = 25 }) => {
 
       <CameraRig>
         <Backdrop />
-          <Center>
-            <Moto />
-          </Center>
+        <Center>
+          <Selection>
+            <EffectComposer autoClear={false}>
+              <SSAO
+                radius={radius}
+                intensity={150}
+                luminanceInfluence={0.5}
+                color="black"
+              />
+              <Outline
+                visibleEdgeColor="white"
+                hiddenEdgeColor="white"
+                blur
+                edgeStrength={100}
+              />
+            </EffectComposer>
+            <Bounds
+              fit
+              clip
+              margin={1.2}
+              damping={0}
+              onFit={(e) => setRadius(e.distance / 4000)}
+            >
+              <Moto />
+            </Bounds>
+          </Selection>
+        </Center>
       </CameraRig>
     </Canvas>
   );

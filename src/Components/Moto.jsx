@@ -6,8 +6,8 @@ import { state } from "../Store";
 import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 import { easing } from "maath";
-import { useControls } from "leva";
-import { Leva } from "leva";
+import { useControls, Leva, folder } from "leva";
+import { Select } from "@react-three/postprocessing";
 
 export function Moto(props) {
   const snap = useSnapshot(state);
@@ -54,6 +54,18 @@ export function Moto(props) {
     decalScale: { value: -0.0142, min: -4, max: 4, step: 0.0001 },
   });
 
+  const config = useControls({
+    all: { value: false },
+    parts: folder(
+      {
+        tank: { value: true },
+        tail: { value: false },
+        piston1: { value: false },
+      },
+      { collapsed: true }
+    ),
+  });
+
   //materials["Purple Glossy"].color = new THREE.Color(snap.selectedColor);
 
   return (
@@ -64,23 +76,25 @@ export function Moto(props) {
       // position={[2, 1, 0]}
       scale={5}
     >
-      <Leva hidden />
-      <group position={[0, 0, 0]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["tanksCombined-Purple_Glossy"].geometry}
-          material={materials["Purple Glossy"]}
-        >
-          <Decal
-            position={[0, 0.0, 0.35]}
-            rotation={[0, 0, 0]}
-            scale={decalScale}
-            opacity={1.7}
-            map={texture}
-            map-anisotropy={16}
-          />
-        </mesh>
+      {/* <Leva hidden /> */}
+      <group>
+        <Select name="tank" enabled={config.tank}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes["tanksCombined-Purple_Glossy"].geometry}
+            material={materials["Purple Glossy"]}
+          >
+            <Decal
+              position={[0, 0.0, 0.35]}
+              rotation={[0, 0, 0]}
+              scale={decalScale}
+              opacity={1.7}
+              map={texture}
+              map-anisotropy={16}
+            />
+          </mesh>
+        </Select>
 
         <mesh
           castShadow
