@@ -1243,6 +1243,5 @@ useGLTF.preload("/CafeRacer.glb");
   "decals/030.png",
   "decals/031.png",
   "decals/033.png",
-  "decals/036.png",
   "decals/044.png",
 ].forEach(useTexture.preload);

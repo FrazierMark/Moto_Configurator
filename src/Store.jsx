@@ -10,7 +10,6 @@ const state = proxy({
     "decals/030",
     "decals/031",
     "decals/033",
-    "decals/036",
     "decals/044",
   ],
   parts: ["tank", "tail", "sidePanel"],

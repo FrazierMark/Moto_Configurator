@@ -135,6 +135,24 @@ function Customizer({ config }) {
           GO BACK
           <AiOutlineArrowLeft size="1.3em" />
         </button>
+
+        <div className="parts">
+          <div className="parts--container">
+            {snap.parts.map((part) => (
+              <div
+                key={part}
+                className="part"
+                onClick={() => (state.selectedPart = part)}
+              >
+                <label>
+                  <input type="checkbox" />
+                  <span>TEST</span>
+                </label>
+              </div>
+            ))}
+          </div>
+        </div>
+        
       </div>
     </motion.section>
   );

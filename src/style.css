@@ -228,6 +228,19 @@ button:hover {
   .exit:hover {
     box-shadow: inset -250px 0 0 0 black;
   }
+
+  .parts--container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .parts {
+    position: absolute;
+    left: 85%;
+    bottom: 70%;
+  }
+  
   
 
 /* MOBILE ADJUSTMENTS */
