@@ -7,12 +7,13 @@ import { useRef } from "react";
 
 export default function Backdrop() {
   const shadows = useRef();
+  const snap = useSnapshot(state);
 
   // transition color of shadows based on state
   useFrame((state, delta) =>
     easing.dampC(
       shadows.current.getMesh().material.color,
-      state.selectedColor,
+      snap.parts[0].color,
       0.25,
       delta
     )

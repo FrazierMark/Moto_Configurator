@@ -82,10 +82,10 @@ function Intro({ config }) {
 function Customizer({ config }) {
   const snap = useSnapshot(state);
 
-  const handleChange = (part) => (newColor) => {
+  const handleChange = (newColor) => {
     const updatedParts = snap.parts.map((p) => {
-      if (p.id === part.id) {
-        return { ...part, color: newColor.hex };
+      if (p.value) {
+        return { ...p, color: newColor.hex };
       } else {
         return p;
       }
@@ -133,7 +133,7 @@ function Customizer({ config }) {
 
         <button
           className="share"
-          style={{ background: snap.selectedColor }}
+          style={{ background: snap.parts[0].color }}
           onClick={() => {
             const link = document.createElement("a");
             link.setAttribute("download", "canvas.png");
@@ -152,7 +152,7 @@ function Customizer({ config }) {
         </button>
         <button
           className="exit"
-          style={{ background: snap.selectedColor }}
+          style={{ background: snap.parts[0].color }}
           onClick={() => {
             state.intro = true;
             state.parts.map((part) => {
@@ -174,12 +174,13 @@ function Customizer({ config }) {
                   checked={part.value}
                   onChange={(e) => handleCheckboxClick(part, e.target.checked)}
                 />
-                <div>
-                  <HuePicker color={part.color} onChange={handleChange(part)} />
-                </div>
+
                 <label>{part.label}</label>
               </div>
             ))}
+            <div>
+              <HuePicker color={"#ffffff"} onChange={handleChange} />
+            </div>
           </div>
         </div>
       </div>

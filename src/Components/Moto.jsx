@@ -21,7 +21,7 @@ export function Moto(props) {
     if (snap.parts[0].value === true) {
       easing.dampC(
         materials["Purple Glossy"].color,
-        snap.selectedColor,
+        snap.parts[0].color,
         0.25,
         delta
       );
@@ -30,7 +30,7 @@ export function Moto(props) {
     if (snap.parts[1].value === true) {
       easing.dampC(
         materials["Leather 01"].color,
-        snap.selectedColor,
+        snap.parts[1].color,
         0.25,
         delta
       );
