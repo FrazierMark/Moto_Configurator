@@ -18,6 +18,12 @@ function CameraRig({ children }) {
       0.9,
       delta
     );
+    easing.dampE(
+      state.camera.rotation,
+      snap.intro ? [0.1, 0, Math.PI * -0.5] : [0.1, 0, 0],
+      0.9,
+      delta
+    );
     // Mouse/camera movement
     easing.dampE(
       group.current.rotation,

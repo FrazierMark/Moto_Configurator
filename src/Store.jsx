@@ -16,8 +16,8 @@ const state = proxy({
 
   parts: [
     { id: 1, label: "Body", value: false, color: "#BAA0BC" },
-    { id: 2, label: "Seat", value: false, color: "#ffffff" },
-    { id: 3, label: "Frame", value: false, color: "#ffffff" },
+    { id: 2, label: "Seat", value: false, color: "#784d24" },
+    { id: 3, label: "Frame and Engine", value: false, color: "#000000" },
     { id: 4, label: "Chrome", value: false, color: "#ffffff" },
   ],
 

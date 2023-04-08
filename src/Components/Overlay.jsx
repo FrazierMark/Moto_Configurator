@@ -9,7 +9,7 @@ import { useSnapshot } from "valtio";
 import { state } from "../Store";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { HuePicker } from "react-color";
+import { HuePicker, CirclePicker, SliderPicker } from "react-color";
 
 export default function Overlay() {
   const snap = useSnapshot(state);
@@ -107,7 +107,7 @@ function Customizer({ config }) {
   return (
     <motion.section {...config} key="custom">
       <div className="customizer">
-        <div className="color-options">
+        {/* <div className="color-options">
           {snap.colors.map((color) => (
             <div
               key={color}
@@ -116,7 +116,7 @@ function Customizer({ config }) {
               onClick={() => (state.selectedColor = color)}
             ></div>
           ))}
-        </div>
+        </div> */}
         <div className="decals">
           <div className="decals--container">
             {snap.decals.map((decal) => (
@@ -179,7 +179,7 @@ function Customizer({ config }) {
               </div>
             ))}
             <div>
-              <HuePicker color={"#ffffff"} onChange={handleChange} />
+              <SliderPicker color={"#ffffff"} onChange={handleChange} />
             </div>
           </div>
         </div>
