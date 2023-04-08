@@ -15,12 +15,12 @@ const state = proxy({
   //parts: ["all", "tank", "tail", "sidePanel"],
 
   parts: [
-    { id: 2, label: "Tank", value: false },
-    { id: 3, label: "Tail", value: false },
-    { id: 4, label: "Side Panel", value: false },
+    { id: 1, label: "Body", value: false, color: "#BAA0BC" },
+    { id: 2, label: "Seat", value: false, color: "#ffffff" },
+    { id: 3, label: "Frame", value: false, color: "#ffffff" },
+    { id: 4, label: "Chrome", value: false, color: "#ffffff" },
   ],
 
-  selectedPart: ["tank"],
   selectedColor: "#BAA0BC",
   selectedDecal: "decals/044",
 });

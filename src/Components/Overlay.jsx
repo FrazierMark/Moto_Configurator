@@ -7,7 +7,9 @@ import {
 } from "react-icons/ai";
 import { useSnapshot } from "valtio";
 import { state } from "../Store";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { HuePicker } from "react-color";
 
 export default function Overlay() {
   const snap = useSnapshot(state);
@@ -80,12 +82,24 @@ function Intro({ config }) {
 function Customizer({ config }) {
   const snap = useSnapshot(state);
 
-  const handleCheckboxClick = (id, checked) => {
-    const updatedParts = snap.parts.map((part) => {
-      if (part.id === id) {
-        return { ...part, value: checked };
+  const handleChange = (part) => (newColor) => {
+    const updatedParts = snap.parts.map((p) => {
+      if (p.id === part.id) {
+        return { ...part, color: newColor.hex };
+      } else {
+        return p;
       }
-      return part;
+    });
+    state.parts = updatedParts;
+  };
+
+  const handleCheckboxClick = (part, checked) => {
+    const updatedParts = snap.parts.map((p) => {
+      if (p.id === part.id) {
+        return { ...part, value: checked };
+      } else {
+        return p;
+      }
     });
     state.parts = updatedParts;
   };
@@ -158,23 +172,13 @@ function Customizer({ config }) {
                   className="part"
                   type="checkbox"
                   checked={part.value}
-                  onChange={(e) =>
-                    handleCheckboxClick(part.id, e.target.checked)
-                  }
+                  onChange={(e) => handleCheckboxClick(part, e.target.checked)}
                 />
+                <div>
+                  <HuePicker color={part.color} onChange={handleChange(part)} />
+                </div>
                 <label>{part.label}</label>
               </div>
-
-              // <div
-              //   key={`part-${index}`}
-              //   className="part"
-              //   onClick={() => (state.parts.part = true)}
-              // >
-              //   <label>
-              //     <input type="checkbox" />
-              //     <span>{part}</span>
-              //   </label>
-              // </div>
             ))}
           </div>
         </div>

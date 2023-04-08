@@ -15,14 +15,26 @@ export function Moto(props) {
 
   const { nodes, materials } = useGLTF("/CafeRacer.glb");
 
+
   useFrame((state, delta) => {
     // smooth transition between different colors
-    easing.dampC(
-      materials["Purple Glossy"].color,
-      snap.selectedColor,
-      0.25,
-      delta
-    );
+    if (snap.parts[0].value === true) {
+      easing.dampC(
+        materials["Purple Glossy"].color,
+        snap.selectedColor,
+        0.25,
+        delta
+      );
+    }
+
+    if (snap.parts[1].value === true) {
+      easing.dampC(
+        materials["Leather 01"].color,
+        snap.selectedColor,
+        0.25,
+        delta
+      );
+    }
   });
 
   const {
@@ -54,19 +66,6 @@ export function Moto(props) {
     decalScale: { value: -0.0142, min: -4, max: 4, step: 0.0001 },
   });
 
-  const config = useControls({
-    all: { value: false },
-    parts: folder(
-      {
-        tank: { value: false },
-        tail: { value: true },
-        sidePanel: { value: false },
-      },
-      { collapsed: true }
-    ),
-  });
-
-
   return (
     <group
       {...props}
@@ -80,7 +79,7 @@ export function Moto(props) {
         <Select
           name="tail"
           enabled={
-            snap.parts.find((part) => part.label === "Tail")?.value ?? false
+            snap.parts.find((part) => part.label === "Body")?.value ?? false
           }
         >
           <mesh
@@ -103,7 +102,7 @@ export function Moto(props) {
         <Select
           name="tank"
           enabled={
-            snap.parts.find((part) => part.label === "Tank")?.value ?? false
+            snap.parts.find((part) => part.label === "Body")?.value ?? false
           }
         >
           <mesh
@@ -571,13 +570,22 @@ export function Moto(props) {
         material={nodes.Cube035_Cube014_remesh.material}
         position={[0, 0, 0]}
       />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube008_Cube019_remesh.geometry}
-        material={materials["Leather 01"]}
-        position={[0, 0, 0]}
-      />
+
+      <Select
+        name="seat"
+        enabled={
+          snap.parts.find((part) => part.label === "Seat")?.value ?? false
+        }
+      >
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube008_Cube019_remesh.geometry}
+          material={materials["Leather 01"]}
+          position={[0, 0, 0]}
+        />
+      </Select>
+
       <mesh
         castShadow
         receiveShadow
@@ -585,13 +593,22 @@ export function Moto(props) {
         material={materials["Rubber - Black"]}
         position={[0, 0, 0]}
       />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube007_Cube018_remesh.geometry}
-        material={materials["Leather 01"]}
-        position={[0, 0, 0]}
-      />
+
+      <Select
+        name="seat"
+        enabled={
+          snap.parts.find((part) => part.label === "Seat")?.value ?? false
+        }
+      >
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube007_Cube018_remesh.geometry}
+          material={materials["Leather 01"]}
+          position={[0, 0, 0]}
+        />
+      </Select>
+
       <mesh
         castShadow
         receiveShadow
@@ -609,7 +626,7 @@ export function Moto(props) {
       <Select
         name="sidePanel"
         enabled={
-          snap.parts.find((part) => part.label === "Side Panel")?.value ?? false
+          snap.parts.find((part) => part.label === "Body")?.value ?? false
         }
       >
         <mesh
