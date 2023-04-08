@@ -63,6 +63,9 @@ function Intro({ config }) {
               style={{ background: "black" }}
               onClick={() => {
                 state.intro = false;
+                state.parts.map((part) => {
+                  part.value = true;
+                });
               }}
             >
               CUSTOMIZE IT <AiOutlineHighlight size="1.3em" />
@@ -77,7 +80,15 @@ function Intro({ config }) {
 function Customizer({ config }) {
   const snap = useSnapshot(state);
 
-
+  const handleCheckboxClick = (id, checked) => {
+    const updatedParts = snap.parts.map((part) => {
+      if (part.id === id) {
+        return { ...part, value: checked };
+      }
+      return part;
+    });
+    state.parts = updatedParts;
+  };
 
   return (
     <motion.section {...config} key="custom">
@@ -130,6 +141,9 @@ function Customizer({ config }) {
           style={{ background: snap.selectedColor }}
           onClick={() => {
             state.intro = true;
+            state.parts.map((part) => {
+              part.value = false;
+            });
           }}
         >
           GO BACK
@@ -138,21 +152,32 @@ function Customizer({ config }) {
 
         <div className="parts">
           <div className="parts--container">
-            {snap.parts.map((part) => (
-              <div
-                key={part}
-                className="part"
-                onClick={() => (state.selectedPart = part)}
-              >
-                <label>
-                  <input type="checkbox" />
-                  <span>TEST</span>
-                </label>
+            {snap.parts.map((part, index) => (
+              <div key={part.id}>
+                <input
+                  className="part"
+                  type="checkbox"
+                  checked={part.value}
+                  onChange={(e) =>
+                    handleCheckboxClick(part.id, e.target.checked)
+                  }
+                />
+                <label>{part.label}</label>
               </div>
+
+              // <div
+              //   key={`part-${index}`}
+              //   className="part"
+              //   onClick={() => (state.parts.part = true)}
+              // >
+              //   <label>
+              //     <input type="checkbox" />
+              //     <span>{part}</span>
+              //   </label>
+              // </div>
             ))}
           </div>
         </div>
-        
       </div>
     </motion.section>
   );

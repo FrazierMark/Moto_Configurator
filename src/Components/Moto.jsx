@@ -77,7 +77,12 @@ export function Moto(props) {
     >
       <Leva hidden />
       <group>
-        <Select name="tail" enabled={config.tail}>
+        <Select
+          name="tail"
+          enabled={
+            snap.parts.find((part) => part.label === "Tail")?.value ?? false
+          }
+        >
           <mesh
             castShadow
             receiveShadow
@@ -95,7 +100,12 @@ export function Moto(props) {
           </mesh>
         </Select>
 
-        <Select name="tank" enabled={config.tank}>
+        <Select
+          name="tank"
+          enabled={
+            snap.parts.find((part) => part.label === "Tank")?.value ?? false
+          }
+        >
           <mesh
             castShadow
             receiveShadow
@@ -596,7 +606,12 @@ export function Moto(props) {
         material={materials["Car Paint - Black Solid"]}
         position={[0, 0, 0]}
       />
-      <Select name="sidePanel" enabled={config.sidePanel}>
+      <Select
+        name="sidePanel"
+        enabled={
+          snap.parts.find((part) => part.label === "Side Panel")?.value ?? false
+        }
+      >
         <mesh
           castShadow
           receiveShadow
