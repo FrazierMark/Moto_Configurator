@@ -19,7 +19,7 @@ import { useSnapshot } from "valtio";
 const App = ({
   position = [0.0, 0.0, 1.6],
   fov = 25,
-  cloudCount = 5,
+  cloudCount = 3,
   depth = 10,
 }) => {
   const snap = useSnapshot(state);
@@ -78,7 +78,12 @@ const App = ({
         </Center>
       </CameraRig>
       {Array.from({ length: cloudCount }, (_, i) => (
-        <Cloud1 key={i} z={-(i / cloudCount) * depth} speed={speed} />
+        <Cloud1
+          key={i}
+          z={-(i / cloudCount) * depth}
+          speed={speed}
+          scale={Math.floor(Math.random() * 3 + 0.02)}
+        />
       ))}
     </Canvas>
   );

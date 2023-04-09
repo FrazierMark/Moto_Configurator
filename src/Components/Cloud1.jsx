@@ -3,11 +3,13 @@ import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 import { useThree, useFrame } from "@react-three/fiber";
 
-export function Cloud1({ index, z, speed }) {
+export function Cloud1({ index, z, speed, scale }) {
   const ref = useRef();
   const { nodes, materials } = useGLTF("/cloud1.glb");
   const { viewport, camera, mouse } = useThree(); //Used to extract info for calculations
   const { width, height } = viewport.getCurrentViewport(camera, [0, 0, z]);
+
+  console.log(height);
 
   const [data] = useState({
     // Randomly distributing the objects along the vertical
@@ -20,9 +22,10 @@ export function Cloud1({ index, z, speed }) {
 
   useFrame((state) => {
     ref.current.rotation.set(0, (data.rY += 0.004), 0);
-    ref.current.position.set((data.x -= 0.03 * speed), data.y, z);
+    ref.current.position.set((data.x -= 0.02 * speed), data.y, z);
     if (data.x < -width) {
-      data.x = width / 1.2;
+      data.x = width / 1.01;
+      data.y = data.y * Math.floor(Math.random() * 1.3) + 1;
     }
   });
 
