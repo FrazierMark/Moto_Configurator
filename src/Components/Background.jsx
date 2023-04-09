@@ -4,8 +4,9 @@ import { useSnapshot } from "valtio";
 import { state } from "../Store";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
+import { Backdrop } from "@react-three/drei";
 
-export default function Backdrop() {
+export default function Background() {
   const shadows = useRef();
   const snap = useSnapshot(state);
 
