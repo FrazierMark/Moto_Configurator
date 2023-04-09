@@ -1,16 +1,9 @@
 import { Canvas } from "@react-three/fiber";
-import {
-  AccumulativeShadows,
-  OrbitControls,
-  SpotLight,
-} from "@react-three/drei";
+import { AccumulativeShadows, OrbitControls } from "@react-three/drei";
 import { Center, Environment, Bounds } from "@react-three/drei";
 import { Moto } from "./Components/Moto";
-import { AmbientLight } from "three";
 import Backdrop from "./Components/Backdrop";
 import CameraRig from "./Components/CameraRig";
-import { Suspense } from "react";
-import Loader from "./Components/Loader";
 import {
   EffectComposer,
   SSAO,
@@ -18,9 +11,30 @@ import {
   Outline,
 } from "@react-three/postprocessing";
 import { useState } from "react";
+import { Cloud1 } from "./Components/Cloud1";
+import { state } from "./Store";
+import { useEffect } from "react";
+import { useSnapshot } from "valtio";
 
-const App = ({ position = [0.0, 0.0, 1.6], fov = 25 }) => {
+const App = ({
+  position = [0.0, 0.0, 1.6],
+  fov = 25,
+  cloudCount = 5,
+  depth = 10,
+}) => {
+  const snap = useSnapshot(state);
   const [radius, setRadius] = useState(0);
+
+  const [speed, setSpeed] = useState(1); // add state hook for speed
+
+  useEffect(() => {
+    if (snap.intro) {
+      setSpeed(1); // update speed using the state hook
+    } else {
+      setSpeed(0); // update speed using the state hook
+    }
+  }, [state.intro]);
+
   return (
     <Canvas
       shadows
@@ -63,6 +77,9 @@ const App = ({ position = [0.0, 0.0, 1.6], fov = 25 }) => {
           </Selection>
         </Center>
       </CameraRig>
+      {Array.from({ length: cloudCount }, (_, i) => (
+        <Cloud1 key={i} z={-(i / cloudCount) * depth} speed={speed} />
+      ))}
     </Canvas>
   );
 };

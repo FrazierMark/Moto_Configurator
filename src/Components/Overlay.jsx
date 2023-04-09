@@ -31,9 +31,9 @@ export default function Overlay() {
       >
         {/* <Logo width="40" height="40" /> */}
         <img src={"decals/044.png"} width="60" height="60" alt="brand" />
-        <div>
+        {/* <div>
           <AiOutlineShopping size="3em" />
-        </div>
+        </div> */}
       </motion.header>
 
       <AnimatePresence>

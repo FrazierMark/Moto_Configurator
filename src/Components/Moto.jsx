@@ -14,7 +14,6 @@ export function Moto(props) {
   const texture = useTexture(`/${snap.selectedDecal}.png`);
 
   const { nodes, materials } = useGLTF("/CafeRacer.glb");
-console.log(materials);
 
 useFrame((state, delta) => {
   // smooth transition between different colors
