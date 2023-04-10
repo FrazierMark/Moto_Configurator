@@ -2,7 +2,6 @@ import { Decal, useTexture } from "@react-three/drei";
 
 const Backdrop = () => {
   const texture1 = useTexture("decals/059.png");
-  const texture2 = useTexture("decals/046.png");
 
   return (
     <mesh

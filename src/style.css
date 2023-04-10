@@ -14,8 +14,8 @@ html {
 }
 
 @font-face {
-  font-family: "bebas-neue";
-  src: url("assets/bebas-neue-v9-latin-regular.woff") format("woff");
+  font-family: "bebas";
+  src: url("assets/bebas.woff") format("woff");
 }
 
 @supports (font-variation-settings: normal) {
@@ -107,7 +107,7 @@ section {
   letter-spacing: 1px;
   width: 30%;
   line-height: 26vh;
-  font-family: 'bebas-neue', sans-serif;
+  font-family: 'bebas', sans-serif;
 }
 
 .support--content {
@@ -248,7 +248,7 @@ button:hover {
       padding: 3px 8px;
       margin: 10px 0px;
       border-radius: 4px;
-    font-family: "bebas-neue";
+    font-family: "bebas";
   }
 
   .part{
