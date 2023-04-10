@@ -61,6 +61,7 @@ canvas {
 header {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   width: 100%;
   padding: 40px;
   align-items: center;
@@ -153,6 +154,9 @@ button:hover {
   transform: scale(1.1);
 }
 
+.border-line-btm {
+  width: 100%;
+}
 
 /* CUSTOMIZER */
 
@@ -239,8 +243,21 @@ button:hover {
     position: absolute;
     left: 85%;
     bottom: 70%;
+      font-size: 20px;
+      display: inline-block;
+      padding: 3px 8px;
+      margin: 10px 0px;
+      border-radius: 4px;
+    font-family: "bebas-neue";
   }
-  
+
+  .part{
+    margin: .5em;
+    padding: 2em;
+  }
+  .part_label{
+    padding: 0.5em;
+  }
   
 
 /* MOBILE ADJUSTMENTS */

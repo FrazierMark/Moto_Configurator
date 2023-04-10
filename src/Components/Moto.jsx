@@ -141,7 +141,7 @@ return (
       material={materials["Rubber - Black"]}
       position={[0, 0, 0]}
     />
-
+    //Wheel Spokes
     <mesh
       castShadow
       receiveShadow
@@ -149,6 +149,7 @@ return (
       material={materials.Chrome}
       position={[0, 0, 0]}
     />
+    //Wheel Spokes
     <mesh
       castShadow
       receiveShadow
@@ -205,14 +206,21 @@ return (
       material={materials["Rubber - Black"]}
       position={[0, 0, 0]}
     />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.Plane012_Plane002_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
-
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
+      //Foot Brakes
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Plane012_Plane002_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+    </Select>
     <mesh
       castShadow
       receiveShadow
@@ -276,27 +284,35 @@ return (
       material={materials["Rubber - Black"]}
       position={[0, 0, 0]}
     />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.Cylinder180_Cylinder267_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.Cylinder039_Cylinder055_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.Cylinder038_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
+    //Carburator Parts
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cylinder180_Cylinder267_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cylinder039_Cylinder055_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cylinder038_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+    </Select>
     <mesh
       castShadow
       receiveShadow
@@ -409,48 +425,56 @@ return (
       material={materials["Car Paint - Black Solid"]}
       position={[0, 0, 0]}
     />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.Cylinder012_Cylinder141_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.Cylinder027_Cylinder008_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.Cylinder011_Cylinder014_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.BezierCurve001_Mesh002_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.BezierCurve026_Mesh016_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.BezierCurve015_Mesh007_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
+      //Exhaust and Shocks
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cylinder012_Cylinder141_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cylinder027_Cylinder008_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cylinder011_Cylinder014_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.BezierCurve001_Mesh002_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.BezierCurve026_Mesh016_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.BezierCurve015_Mesh007_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+    </Select>
     <mesh
       castShadow
       receiveShadow
@@ -458,13 +482,20 @@ return (
       material={materials["Rubber - Black"]}
       position={[0, 0, 0]}
     />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.Cylinder004_Cylinder005_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cylinder004_Cylinder005_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+    </Select>
     <mesh
       castShadow
       receiveShadow
@@ -493,13 +524,20 @@ return (
       material={nodes.Cylinder033_Cylinder041_remesh.material}
       position={[0, 0, 0]}
     />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.BezierCurve019_Mesh013_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.BezierCurve019_Mesh013_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+    </Select>
     <mesh
       castShadow
       receiveShadow
@@ -514,13 +552,20 @@ return (
       material={materials["Rubber - Black"]}
       position={[0, 0, 0]}
     />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.Cube011_Cube002_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cube011_Cube002_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+    </Select>
     <mesh
       castShadow
       receiveShadow
@@ -535,20 +580,27 @@ return (
       material={materials["Car Paint - Black Solid"]}
       position={[0, 0, 0]}
     />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.Cube002_Cube007_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.Cube_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cube002_Cube007_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cube_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+    </Select>
     <mesh
       castShadow
       receiveShadow
@@ -570,20 +622,27 @@ return (
       material={materials["Car Paint - Black Solid"]}
       position={[0, 0, 0]}
     />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.Cube030_Cube036_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.Cylinder109_Cylinder063_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cube030_Cube036_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cylinder109_Cylinder063_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+    </Select>
     <mesh
       castShadow
       receiveShadow
@@ -591,7 +650,6 @@ return (
       material={nodes.Cube035_Cube014_remesh.material}
       position={[0, 0, 0]}
     />
-
     <Select
       name="seat"
       enabled={snap.parts.find((part) => part.label === "Seat")?.value ?? false}
@@ -604,7 +662,6 @@ return (
         position={[0, 0, 0]}
       />
     </Select>
-
     <mesh
       castShadow
       receiveShadow
@@ -612,7 +669,6 @@ return (
       material={materials["Rubber - Black"]}
       position={[0, 0, 0]}
     />
-
     <Select
       name="seat"
       enabled={snap.parts.find((part) => part.label === "Seat")?.value ?? false}
@@ -625,7 +681,6 @@ return (
         position={[0, 0, 0]}
       />
     </Select>
-
     <mesh
       castShadow
       receiveShadow
@@ -661,7 +716,6 @@ return (
         />
       </mesh>
     </Select>
-
     <mesh
       castShadow
       receiveShadow
@@ -725,13 +779,20 @@ return (
       material={materials.Glass}
       position={[0, 0, 0]}
     />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.Cylinder156_Cylinder232_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cylinder156_Cylinder232_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+    </Select>
     <mesh
       castShadow
       receiveShadow
@@ -739,20 +800,27 @@ return (
       material={materials.Glass}
       position={[0, 0, 0]}
     />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.Cylinder156_Cylinder232_remesh_1.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.Cylinder155_Cylinder231_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cylinder156_Cylinder232_remesh_1.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cylinder155_Cylinder231_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+    </Select>
     <mesh
       castShadow
       receiveShadow
@@ -767,20 +835,27 @@ return (
       material={materials["Car Paint - Black Solid"]}
       position={[0, 0, 0]}
     />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.Cylinder283_Cylinder439_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
-    <mesh
-      castShadow
-      receiveShadow
-      geometry={nodes.Cylinder124_Cylinder184_remesh.geometry}
-      material={materials.Chrome}
-      position={[0, 0, 0]}
-    />
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cylinder283_Cylinder439_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cylinder124_Cylinder184_remesh.geometry}
+        material={materials.Chrome}
+        position={[0, 0, 0]}
+      />
+    </Select>
     <mesh
       castShadow
       receiveShadow
@@ -795,13 +870,20 @@ return (
       material={materials["Car Paint - Black Solid"]}
       position={[0, 0, 0]}
     />
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
     <mesh
       castShadow
       receiveShadow
       geometry={nodes.Cylinder006_Cylinder012_remesh.geometry}
       material={materials.Chrome}
       position={[0, 0, 0]}
-    />
+      />
+      </Select>
     <mesh
       castShadow
       receiveShadow
@@ -837,6 +919,12 @@ return (
       material={materials["Car Paint - Black Solid"]}
       position={[0, 0, 0]}
     />
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
     <mesh
       castShadow
       receiveShadow
@@ -857,7 +945,8 @@ return (
       geometry={nodes.frame004_Mesh017_remesh.geometry}
       material={materials.Chrome}
       position={[0, 0, 0]}
-    />
+      />
+      </Select>
     <mesh
       castShadow
       receiveShadow
@@ -865,13 +954,20 @@ return (
       material={materials["Car Paint - Black Solid"]}
       position={[0, 0, 0]}
     />
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
     <mesh
       castShadow
       receiveShadow
       geometry={nodes.Cylinder175_Cylinder262_remesh.geometry}
       material={materials.Chrome}
       position={[0, 0, 0]}
-    />
+      />
+      </Select>
     <mesh
       castShadow
       receiveShadow
@@ -879,13 +975,20 @@ return (
       material={materials["Car Paint - Black Solid"]}
       position={[0, 0, 0]}
     />
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
     <mesh
       castShadow
       receiveShadow
       geometry={nodes.Cylinder005_Cylinder028_remesh.geometry}
       material={materials.Chrome}
       position={[0, 0, 0]}
-    />
+      />
+      </Select>
     <mesh
       castShadow
       receiveShadow
@@ -893,6 +996,12 @@ return (
       material={materials["Rubber - Black"]}
       position={[0, 0, 0]}
     />
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
     <mesh
       castShadow
       receiveShadow
@@ -906,7 +1015,8 @@ return (
       geometry={nodes.Cylinder137_Cylinder201_remesh.geometry}
       material={materials.Chrome}
       position={[0, 0, 0]}
-    />
+      />
+      </Select>
     <mesh
       castShadow
       receiveShadow
@@ -928,13 +1038,20 @@ return (
       material={materials["Rubber - Black"]}
       position={[0, 0, 0]}
     />
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
     <mesh
       castShadow
       receiveShadow
       geometry={nodes.Cylinder206_Cylinder321_remesh.geometry}
       material={materials.Chrome}
       position={[0, 0, 0]}
-    />
+      />
+      </Select>
     <mesh
       castShadow
       receiveShadow
@@ -956,13 +1073,20 @@ return (
       material={materials["Rubber - Black"]}
       position={[0, 0, 0]}
     />
+     <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
     <mesh
       castShadow
       receiveShadow
       geometry={nodes.Cylinder008_Cylinder021_remesh.geometry}
       material={materials.Chrome}
       position={[0, 0, 0]}
-    />
+      />
+      </Select>
     <mesh
       castShadow
       receiveShadow
@@ -970,6 +1094,12 @@ return (
       material={materials["Rubber - Black"]}
       position={[0, 0, 0]}
     />
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
     <mesh
       castShadow
       receiveShadow
@@ -983,7 +1113,8 @@ return (
       geometry={nodes.Cylinder203_Cylinder317_remesh.geometry}
       material={materials.Chrome}
       position={[0, 0, 0]}
-    />
+      />
+      </Select>
     <mesh
       castShadow
       receiveShadow
@@ -1005,6 +1136,12 @@ return (
       material={materials["Rubber - Black"]}
       position={[0, 0, 0]}
     />
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
     <mesh
       castShadow
       receiveShadow
@@ -1018,7 +1155,8 @@ return (
       geometry={nodes.Cylinder213_Cylinder339_remesh.geometry}
       material={materials.Chrome}
       position={[0, 0, 0]}
-    />
+      />
+      </Select>
     <mesh
       castShadow
       receiveShadow
@@ -1033,8 +1171,12 @@ return (
       material={materials["Rubber - Black"]}
       position={[0, 0.0003, -0.102]}
     />
-
-    
+    <Select
+      name="chrome"
+      enabled={
+        snap.parts.find((part) => part.label === "Chrome")?.value ?? false
+      }
+    >
     <mesh
       castShadow
       receiveShadow
@@ -1279,7 +1421,8 @@ return (
       geometry={nodes.Cylinder028_Cylinder015_remesh.geometry}
       material={materials.Chrome}
       position={[0, 0, 0]}
-    />
+      />
+      </Select>
   </group>
 );
 }

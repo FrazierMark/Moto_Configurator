@@ -60,7 +60,6 @@ const App = ({
       {/* <OrbitControls /> */}
 
       <CameraRig>
-        
         {/* <Backdrop /> */}
         <Center>
           <Selection>
@@ -95,9 +94,9 @@ const App = ({
               >
                 <planeGeometry args={[6, 6]} />
                 <meshStandardMaterial
-                  color="#90EE90"
-                  roughness={4}
-                  metalness={0}
+                  color="#FFFFF0"
+                  roughness={9}
+                  metalness={1}
                 />
               </mesh>
               <directionalLight

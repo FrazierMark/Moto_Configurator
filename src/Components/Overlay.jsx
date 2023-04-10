@@ -34,6 +34,7 @@ export default function Overlay() {
         {/* <div>
           <AiOutlineShopping size="3em" />
         </div> */}
+        <hr className="border-line-btm" />
       </motion.header>
 
       <AnimatePresence>
@@ -164,7 +165,7 @@ function Customizer({ config }) {
           <AiOutlineArrowLeft size="1.3em" />
         </button>
 
-        <div className="parts">
+        <div className="parts" >
           <div className="parts--container">
             {snap.parts.map((part, index) => (
               <div key={part.id}>
@@ -175,7 +176,7 @@ function Customizer({ config }) {
                   onChange={(e) => handleCheckboxClick(part, e.target.checked)}
                 />
 
-                <label>{part.label}</label>
+                <label className="part_label">{part.label}</label>
               </div>
             ))}
             <div>
