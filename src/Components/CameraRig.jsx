@@ -12,7 +12,7 @@ function CameraRig({ children }) {
     easing.damp3(
       state.camera.position,
       snap.intro
-        ? [0, state.viewport.width * 0.02, 2.5]
+        ? [0, state.viewport.width * 0.023, 2.5]
         : [0, -state.viewport.width / 12, 1.6],
       0.9,
       delta

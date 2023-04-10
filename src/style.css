@@ -14,8 +14,8 @@ html {
 }
 
 @font-face {
-  font-family: "bebas";
-  src: url("assets/bebas.woff") format("woff");
+  font-family: "TheNightWatch";
+  src: url("assets/TheNightWatch.ttf") format("truetype");
 }
 
 @supports (font-variation-settings: normal) {
@@ -41,7 +41,7 @@ body,
 }
 
 body {
-  background: #e3f3de;
+  background: #d7d4cf;
   font-family: 'Inter', sans-serif;
 }
 
@@ -91,8 +91,8 @@ section {
 }
 
 .section--container {
-  margin-top: -7vh;
-  margin-left: -10vw;
+  margin-top: -6vh;
+  margin-left: 3vw;
 }
 
 .section--container.hidden {
@@ -102,12 +102,13 @@ section {
 }
 
 .section--container h1 {
-  font-weight: 400;
-  font-size: 25vw;
-  letter-spacing: 1px;
-  width: 30%;
-  line-height: 26vh;
-  font-family: 'bebas', sans-serif;
+  font-weight: 300;
+  font-size: 20vw;
+  letter-spacing: -10px;
+  
+  width: 40%;
+  line-height: 23vh;
+  font-family: 'TheNightWatch', sans-serif;
 }
 
 .support--content {
@@ -243,12 +244,12 @@ button:hover {
     position: absolute;
     left: 85%;
     bottom: 70%;
-      font-size: 20px;
+      font-size: 15px;
       display: inline-block;
       padding: 3px 8px;
       margin: 10px 0px;
       border-radius: 4px;
-    font-family: "bebas";
+    font-family: "PoiretOne";
   }
 
   .part{
@@ -256,7 +257,7 @@ button:hover {
     padding: 2em;
   }
   .part_label{
-    font-family: 'Inter', sans-serif;;
+    font-family: 'PoiretOne', sans-serif;;
     padding: 0.5em;
   }
   

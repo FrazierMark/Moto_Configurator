@@ -54,7 +54,7 @@ const App = ({
       eventPrefix="client"
       camera={{ position, fov }}
     >
-      <ambientLight intensity={0.9} />
+      <ambientLight intensity={0.4} />
       <Environment preset="sunset" />
       {/* <OrbitControls /> */}
 
@@ -65,7 +65,7 @@ const App = ({
             <EffectComposer autoClear={false}>
               <SSAO
                 radius={radius}
-                intensity={150}
+                intensity={100}
                 luminanceInfluence={0.5}
                 color="black"
               />
@@ -89,7 +89,7 @@ const App = ({
 
               <directionalLight
                 position={[0, 1, 5]}
-                intensity={0.4}
+                intensity={0.7}
                 castShadow
                 shadow-mapSize={[1024, 1024]}
                 shadow-camera-near={1}
