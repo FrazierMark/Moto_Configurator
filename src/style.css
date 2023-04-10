@@ -3,10 +3,7 @@
 html {
   font-family: 'Inter', sans-serif;
 }
-@font-face {
-  font-family: "PalmCanyonDrive";
-  src: url("assets/PalmCanyonDrive.otf") format("opentype");
-}
+
 
 @font-face {
   font-family: "PoiretOne";
