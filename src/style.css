@@ -5,17 +5,17 @@ html {
 }
 @font-face {
   font-family: "PalmCanyonDrive";
-  src: url("PalmCanyonDrive.otf") format("opentype");
+  src: url("assets/PalmCanyonDrive.otf") format("opentype");
 }
 
 @font-face {
   font-family: "PoiretOne";
-  src: url("PoiretOne.ttf") format("truetype");
+  src: url("assets/PoiretOne.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "bebas-neue";
-  src: url("bebas-neue-v9-latin-regular.woff") format("woff");
+  src: url("assets/bebas-neue-v9-latin-regular.woff") format("woff");
 }
 
 @supports (font-variation-settings: normal) {

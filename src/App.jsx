@@ -23,8 +23,8 @@ import {
   RandomizedLight,
   useHelper,
 } from "@react-three/drei";
-import { Backdrop } from "@react-three/drei";
-import { CameraShake } from "@react-three/drei";
+import Backdrop from "./Components/Backdrop";
+
 
 const App = ({
   position = [0.0, 0.0, 1.6],
@@ -36,7 +36,6 @@ const App = ({
   const [radius, setRadius] = useState(0);
 
   const [speed, setSpeed] = useState(1); // add state hook for speed
-
   
 
   useEffect(() => {
@@ -86,19 +85,8 @@ const App = ({
             >
               <Moto recieveShadow={true} />
 
-              <mesh
-                castShadow={false}
-                receiveShadow={true}
-                position={[0, 0, -0.4]}
-                rotation={[0, 0, -Math.PI * 0.5]}
-              >
-                <planeGeometry args={[6, 6]} />
-                <meshStandardMaterial
-                  color="#FFFFF0"
-                  roughness={9}
-                  metalness={1}
-                />
-              </mesh>
+              <Backdrop />
+
               <directionalLight
                 position={[0, 1, 5]}
                 intensity={0.4}
