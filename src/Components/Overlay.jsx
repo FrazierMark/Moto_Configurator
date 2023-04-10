@@ -66,9 +66,8 @@ function Intro({ config }) {
               style={{ background: "black" }}
               onClick={() => {
                 state.intro = false;
-                state.parts.map((part) => {
-                  part.value = true;
-                });
+                state.parts[0].value = true;
+                
               }}
             >
               CUSTOMIZE IT <AiOutlineHighlight size="1.3em" />
