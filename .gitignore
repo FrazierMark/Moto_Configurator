@@ -15,8 +15,7 @@
 .build
 /build
 
-/public
-.public
+
 
 # misc
 .DS_Store
