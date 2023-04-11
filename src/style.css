@@ -7,12 +7,12 @@ html {
 
 @font-face {
   font-family: "PoiretOne";
-  src: url("assets/PoiretOne.ttf") format("truetype");
+  src: url("/fonts/PoiretOne-Regular.ttf") format("truetype"),
 }
 
 @font-face {
   font-family: "TheNightWatch";
-  src: url("assets/TheNightWatch.ttf") format("truetype");
+  src: url('/fonts/TheNightWatch.ttf') format("truetype");
 }
 
 @supports (font-variation-settings: normal) {
@@ -105,7 +105,7 @@ section {
   
   width: 40%;
   line-height: 23vh;
-  font-family: 'TheNightWatch', sans-serif;
+  font-family: 'TheNightWatch';
 }
 
 .support--content {
