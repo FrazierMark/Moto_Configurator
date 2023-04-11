@@ -89,7 +89,7 @@ section {
 }
 
 .section--container {
-  margin-top: -6vh;
+  margin-top: 4vh;
   margin-left: 3vw;
 }
 
@@ -103,9 +103,8 @@ section {
   font-weight: 300;
   font-size: 20vw;
   letter-spacing: -10px;
-  
   width: 40%;
-  line-height: 23vh;
+  line-height: 26vh;
   font-family: 'TheNightWatch';
 }
 
