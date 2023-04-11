@@ -13,7 +13,7 @@ function CameraRig({ children }) {
       state.camera.position,
       snap.intro
         ? [0, state.viewport.width * 0.023, 2.5]
-        : [0, -state.viewport.width / 12, 1.6],
+        : [0, -state.viewport.width / 12, 1.8],
       0.9,
       delta
     );

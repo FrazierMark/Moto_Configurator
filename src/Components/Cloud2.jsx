@@ -20,7 +20,7 @@ export function Cloud2({ index, z, speed, scale }) {
 
   useFrame((state) => {
     ref.current.rotation.set(0, (data.rY += 0.0033), 0);
-    ref.current.position.set((data.x -= 0.02 * speed), data.y, z);
+    ref.current.position.set((data.x -= 0.019 * speed), data.y, z);
     if (data.x < -width - 0.80) {
       data.x = width / 0.46;
       data.y = data.y * Math.floor(Math.random() * 1.3) + 1;
@@ -35,7 +35,7 @@ export function Cloud2({ index, z, speed, scale }) {
           receiveShadow
           geometry={nodes.stylized_static_cloud_004_mesh.geometry}
           material={materials.stylized_static_cloud}
-          position={[0.77, 0, -0.51]}
+          position={[0.97, 0, -0.51]}
         />
       </group>
     </mesh>

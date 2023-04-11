@@ -1,4 +1,3 @@
-import { Logo } from "./Logo";
 import {
   AiOutlineHighlight,
   AiOutlineShopping,
@@ -7,9 +6,8 @@ import {
 } from "react-icons/ai";
 import { useSnapshot } from "valtio";
 import { state } from "../Store";
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { HuePicker, CirclePicker, SliderPicker } from "react-color";
+import { CirclePicker } from "react-color";
 
 export default function Overlay() {
   const snap = useSnapshot(state);
@@ -67,7 +65,6 @@ function Intro({ config }) {
               onClick={() => {
                 state.intro = false;
                 state.parts[0].value = true;
-                
               }}
             >
               CUSTOMIZE IT <AiOutlineHighlight size="1.3em" />
@@ -164,22 +161,30 @@ function Customizer({ config }) {
           <AiOutlineArrowLeft size="1.3em" />
         </button>
 
-        <div className="parts" >
+        <div className="parts">
           <div className="parts--container">
             {snap.parts.map((part, index) => (
-              <div key={part.id}>
-                <input
-                  className="part"
-                  type="checkbox"
-                  checked={part.value}
-                  onChange={(e) => handleCheckboxClick(part, e.target.checked)}
-                />
-
-                <label className="part_label">{part.label}</label>
+              <div className="part" key={part.id}>
+                <label
+                  className="toggler-wrapper style-22"
+                >
+                  <input
+                    className="part"
+                    type="checkbox"
+                    checked={part.value}
+                    onChange={(e) =>
+                      handleCheckboxClick(part, e.target.checked)
+                    }
+                  />
+                  <div className="toggler-slider" style={{ background: snap.parts[0].color }}>
+                    <div className="toggler-knob"></div>
+                  </div>
+                </label>
+                {part.label}
               </div>
             ))}
             <div>
-              <SliderPicker color={"#ffffff"} onChange={handleChange} />
+              <CirclePicker onChange={handleChange} />
             </div>
           </div>
         </div>

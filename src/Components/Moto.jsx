@@ -83,7 +83,7 @@ return (
     {...props}
     dispose={null}
     rotation={[0, Math.PI * -0.5, 0]}
-    // position={[2, 1, 0]}
+    position={[0, 0, -3]}
     scale={5}
   >
     <Leva hidden />

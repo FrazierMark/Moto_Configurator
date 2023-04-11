@@ -30,13 +30,12 @@ const App = ({
   position = [0.0, 0.0, 1.6],
   fov = 25,
   cloudCount = 2,
-  depth = 10,
+  depth = 3,
 }) => {
   const snap = useSnapshot(state);
   const [radius, setRadius] = useState(0);
 
   const [speed, setSpeed] = useState(1); // add state hook for speed
-  
 
   useEffect(() => {
     if (snap.intro) {
@@ -65,7 +64,7 @@ const App = ({
             <EffectComposer autoClear={false}>
               <SSAO
                 radius={radius}
-                intensity={100}
+                intensity={4}
                 luminanceInfluence={0.5}
                 color="black"
               />

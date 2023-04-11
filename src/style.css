@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,600;1,900&display=swap');
 @import url('https://rsms.me/inter/inter.css');
 html {
@@ -38,7 +39,7 @@ body,
 }
 
 body {
-  background: #d7d4cf;
+  background: #e0dbd4;
   font-family: 'Inter', sans-serif;
 }
 
@@ -132,7 +133,7 @@ section {
 button {
   background-color: #dd5c18;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   color: white;
   font-weight: bolder;
   pointer-events: all;
@@ -200,12 +201,12 @@ button:hover {
   /* DECALS */
   .decals--container {
     display: flex;
-    gap: 20px;
+    gap: 23px;
   }
   
   .decals {
     position: absolute;
-    left: 50px;
+    left: 37%;
     bottom: 40px;
   }
   
@@ -238,26 +239,93 @@ button:hover {
   }
   
   .parts {
-    position: absolute;
-    left: 85%;
-    bottom: 70%;
-      font-size: 15px;
-      display: inline-block;
-      padding: 3px 8px;
-      margin: 10px 0px;
-      border-radius: 4px;
+    position: relative;
+    left: 52%;
+    bottom: 49%;
+    font-size: 16px;
+    width: 50%;
+    display: inline-block;
+    padding: 4px 9px;
+    margin: 10px 0px;
+    border-radius: 4px;
     font-family: "PoiretOne";
   }
 
   .part{
-    margin: .5em;
-    padding: 2em;
+    display: flex;
+    flex-direction: row;
+    padding: .4rem;
+    gap: 20px;
   }
   .part_label{
     font-family: 'PoiretOne', sans-serif;;
     padding: 0.5em;
   }
   
+  .slider-picker{
+    width: 50%;
+  }
+
+
+.toggler-wrapper {
+  display: block;
+  width: 45px;
+  height: 25px;
+  cursor: pointer;
+  position: relative;
+}
+
+.toggler-wrapper input[type="checkbox"] {
+  display: none;
+}
+
+.toggler-wrapper input[type="checkbox"]:checked+.toggler-slider {
+  background-color: #44cc66;
+}
+
+.toggler-wrapper .toggler-slider {
+  background-color: #ccc;
+  position: absolute;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.toggler-wrapper .toggler-knob {
+  position: absolute;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.toggler-wrapper.style-22 input[type="checkbox"]:checked+.toggler-slider .toggler-knob {
+	left: calc(100% - 19px - 3px);
+	-webkit-transform: scale(1);
+	transform: scale(1);
+  background-color: #44cc66;
+}
+
+.toggler-wrapper.style-22 .toggler-slider {
+	background-color: #eb4f37;
+}
+
+.toggler-wrapper.style-22 .toggler-knob {
+	width: calc(25px - 6px);
+	height: calc(25px - 6px);
+	border-radius: 50%;
+	left: 3px;
+	top: 3px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	background-color: white;
+	-webkit-transform: scale(0.5);
+	transform: scale(0.5);
+}
+
+
 
 /* MOBILE ADJUSTMENTS */
 
