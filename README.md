@@ -2,8 +2,8 @@
  
 ## This is a application that allows users to select and style/color different parts of a 3D motorcycle.
 
-![Screen shot of Home of Tomorrow App](https://imgur.com/uxfXod8.png)
-![Screen shot of Home of Tomorrow App](https://imgur.com/fTgOqum.png)
+![Screen shot of Moto Configurator App](https://imgur.com/uxfXod8.png)
+![Screen shot of Moto Configurator App](https://imgur.com/fTgOqum.png)
 
 
 ## Techologies Used
