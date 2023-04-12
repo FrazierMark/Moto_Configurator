@@ -1,6 +1,6 @@
 # Moto_Configurator
  
-## This is a application that allows users to select and style/color different parts of a 3D motorcycle.
+## This is an application that allows users to select and style/color different parts of a 3D motorcycle.
 
 ![Screen shot of Moto Configurator App](https://imgur.com/uxfXod8.png)
 ![Screen shot of Moto Configurator App](https://imgur.com/fTgOqum.png)
