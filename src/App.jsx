@@ -1,8 +1,6 @@
 import { Canvas } from "@react-three/fiber";
-import { AccumulativeShadows, OrbitControls } from "@react-three/drei";
 import { Center, Environment, Bounds } from "@react-three/drei";
 import { Moto } from "./Components/Moto";
-import Background from "./Components/Background";
 import CameraRig from "./Components/CameraRig";
 import {
   EffectComposer,
@@ -10,19 +8,12 @@ import {
   Selection,
   Outline,
 } from "@react-three/postprocessing";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Cloud1 } from "./Components/Cloud1";
 import { state } from "./Store";
 import { useEffect } from "react";
-import * as THREE from "three";
 import { useSnapshot } from "valtio";
 import { Cloud2 } from "./Components/Cloud2";
-import {
-  Stage,
-  ContactShadows,
-  RandomizedLight,
-  useHelper,
-} from "@react-three/drei";
 import Backdrop from "./Components/Backdrop";
 
 
