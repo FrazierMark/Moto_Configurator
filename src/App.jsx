@@ -45,7 +45,7 @@ const App = ({
       camera={{ position, fov }}
     >
       <ambientLight intensity={0.4} />
-      <Environment preset="sunset" />
+      <Environment preset="city" />
       {/* <OrbitControls /> */}
 
       <CameraRig>
